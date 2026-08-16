@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Nkanda</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="flow-shell">
+  <div class="flow-topbar">
+    <a href="#" id="back-link" class="flow-back">← Back</a>
+    <div class="flow-tabs" id="flow-tabs" style="display:none;">
+      <div class="flow-tab" data-tab="travelers">Travelers</div>
+      <div class="flow-tab" data-tab="docs">Docs</div>
+      <div class="flow-tab" data-tab="checkout">Checkout</div>
+    </div>
+    <a href="index.html" class="flow-home-btn" title="Home">🏠</a>
+  </div>
+
+  <div class="flow-body">
+
+    <!-- Step: loading -->
+    <div class="flow-step" id="step-loading">
+      <div class="loading-wrap">
+        <div class="spinner"></div>
+        <div class="loading-msg" id="loading-msg">Checking your profile…</div>
+      </div>
+    </div>
+
+    <!-- Step: match -->
+    <div class="flow-step" id="step-match" style="display:none;">
+      <h2 class="flow-step-title">Best route found</h2>
+      <p class="flow-step-sub" id="match-sub">Based on your citizenship and destination</p>
+      <div id="match-card"></div>
+    </div>
+
+    <!-- Step: travelers -->
+    <div class="flow-step" id="step-travelers" style="display:none;">
+      <h2 class="flow-step-title">Who's going on this trip?</h2>
+      <p class="flow-step-sub">You can add all travelers or continue solo</p>
+      <div id="traveler-list"></div>
+      <button class="add-traveler-btn" id="add-traveler-btn">+ Add traveler</button>
+    </div>
+
+    <!-- Step: details -->
+    <div class="flow-step" id="step-details" style="display:none;">
+      <h2 class="flow-step-title">Traveler details</h2>
+      <p class="flow-step-sub">A few facts per traveler — this is what pre-fills the actual application.</p>
+      <div id="details-forms"></div>
+    </div>
+
+    <!-- Step: docs -->
+    <div class="flow-step" id="step-docs" style="display:none;">
+      <h2 class="flow-step-title">The essential documents</h2>
+      <p class="flow-step-sub" id="docs-sub"></p>
+      <div id="docs-list"></div>
+      <div class="vault-note"><span>🔒</span> <span><strong>NkandaVault</strong> — your data is protected with AES-256 encryption for maximum security.</span></div>
+    </div>
+
+    <!-- Step: checkout -->
+    <div class="flow-step" id="step-checkout" style="display:none;">
+      <h2 class="flow-step-title">Checkout</h2>
+      <p class="flow-step-sub">This is a demo — no real payment is processed.</p>
+      <div class="apply-card" style="margin:0 auto;">
+        <div id="summary-rows"></div>
+        <div class="pay-form">
+          <input type="text" id="pay-name" placeholder="Name on card" autocomplete="off">
+          <input type="text" id="pay-number" placeholder="Card number (demo — any digits)" autocomplete="off" maxlength="19">
+          <div class="pay-row-2">
+            <input type="text" id="pay-expiry" placeholder="MM/YY" autocomplete="off" maxlength="5">
+            <input type="text" id="pay-cvc" placeholder="CVC" autocomplete="off" maxlength="4">
+          </div>
+          <div class="field-error" id="pay-error">Fill in every field to continue — this is a demo, no real card is charged.</div>
+        </div>
+        <p class="demo-note">🔒 Demo checkout only. No card network is contacted and nothing is charged.</p>
+      </div>
+    </div>
+
+    <!-- Step: success -->
+    <div class="flow-step" id="step-success" style="display:none;">
+      <div class="success-wrap">
+        <div class="success-check">✓</div>
+        <h2>Application submitted</h2>
+        <p id="success-sub">Your visa application has been received and is being tracked.</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="index.html" class="btn btn-outline">Back to Nkanda.com</a>
+          <a href="#" class="btn btn-primary">Continue in the Nkanda app</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flow-footer-bar" id="footer-bar" style="display:none;">
+    <div class="inner">
+      <button class="btn btn-outline" id="footer-secondary" style="display:none;">Back</button>
+      <button class="btn btn-primary btn-block" id="footer-primary">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/apply.js"></script>
+</body>
+</html>
